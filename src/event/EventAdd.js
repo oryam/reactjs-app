@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import database from '../datasource/FirebaseDS';
+
+import { dsEventAdd } from './EventDS';
 
 export class EventAdd extends Component {
   constructor(props) {
@@ -39,10 +40,9 @@ export class EventAdd extends Component {
     event.preventDefault();
   }
 
-  save(eventData) {
-    console.log(database);
+  save(data) {
     const id = Date.now();
-    database.ref('event/' + id).set(eventData);
+    dsEventAdd(id, data);
   }
 
   render() {
