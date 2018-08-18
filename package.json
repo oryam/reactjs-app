@@ -2,6 +2,7 @@
   "name": "reactjs-app",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://oryam.github.io/reactjs-app/",
   "dependencies": {
     "firebase": "^5.0.4",
     "pouchdb": "^6.4.3",
@@ -15,6 +16,11 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "serve:dist": "http-server build"
+    "serve:dist": "http-server build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  },
+  "devDependencies": {
+    "gh-pages": "^1.2.0"
   }
 }
